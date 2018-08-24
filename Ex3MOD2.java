@@ -1,5 +1,4 @@
 
-// Classe Quicksort a ser completada
 class Quicksort {
 
     static void swap(int[] a, int i, int j) {
@@ -13,14 +12,14 @@ class Quicksort {
         int esq = inicio, dir = fim;
         int pivo = a[inicio];
         while(esq < dir){
-            while(a[esq] <= pivo){
+            while(esq <= fim && a[esq] <= pivo){
                 esq++;
             }
-            while(a[dir] > pivo){
+            while(dir > inicio && a[dir] > pivo){
                 dir--;
             }
             if(esq < dir){
-                swap(a,a[esq],a[dir]);   
+                swap(a,esq,dir);   
             }
         }
         a[inicio] = a[dir];
@@ -33,7 +32,7 @@ class Quicksort {
         if(l < r){
             int posPivo = partition(a,l,r);
             quickrec(a,l,posPivo-1);
-            quickrec(a,posPivo+1 ,r);
+            quickrec(a,posPivo+1,r);
         }
     }
 

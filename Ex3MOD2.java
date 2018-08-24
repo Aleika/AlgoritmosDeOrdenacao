@@ -20,7 +20,7 @@ class Quicksort {
                 dir--;
             }
             if(esq < dir){
-                swap(a,v[esq],v[dir]);   
+                swap(a,a[esq],a[dir]);   
             }
         }
         a[inicio] = a[dir];
